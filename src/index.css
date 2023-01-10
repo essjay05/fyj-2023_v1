@@ -15,6 +15,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.handwritten-style {
+  font-family: 'Architects Daughter', Avenir, Helvetica, sans-serif;
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -32,9 +40,43 @@ body {
   min-height: 100vh;
 }
 
-h1 {
+h1, .title-style-1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2, .title-style-2 {
+  font-size: 2.9em;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h3, .title-style-3 {
+  font-size: 2.75em;
+  line-height: 1.1;
+}
+
+h4, .title-style-4 {
+  font-size: 2.25em;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h5, .title-style-5 {
+  font-size: 2em;
+  line-height: 1;
+}
+
+h6, .title-style-6 {
+  font-size: 1.75em;
+  line-height: 1;
+  font-weight: 600;
+}
+
+p, .content-style {
+  font-size: 1.55em;
+  line-height: 1.1;
+  font-weight: 400;
 }
 
 button {
