@@ -23,6 +23,12 @@
   --yellow-color: #fdcb6e;
   --green-color: #00b894;
   --blue-color: #0984e3;
+  --teal-highlight: rgba(1, 255, 230, .85);
+}
+
+* {
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
 .handwritten-style {

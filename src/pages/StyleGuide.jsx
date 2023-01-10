@@ -11,9 +11,8 @@ export function StyleGuide({ pageName }) {
 
   return (
     <>
-      <NavBar currentPageName={pageName} />
+      <Header currentPageName={pageName} />
       <main>
-        <h1 className='handwritten-style'>{pageName}</h1>
         <section className='text-styles'>
           <div className='header-w-content'>
             <div>
