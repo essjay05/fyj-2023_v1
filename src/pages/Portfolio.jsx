@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import Header from '../components/global/Header/Header'
 import Footer from '../components/global/Footer/Footer'
 
-export function Home({ pageName }) {
+export function Portfolio({ pageName }) {
 
   useEffect(() => {
     document.title = pageName
@@ -11,10 +11,11 @@ export function Home({ pageName }) {
 
   return (
     <>
-      <Header currentPageName={pageName}/>
+      <Header currentPageName={pageName} />
       <main>
-        <h1>{pageName}</h1>
-        <h2>Hello World!</h2>
+        <section>
+          <h2 className='handwritten-style'>Project Cards go here...</h2>
+        </section>
       </main>
       <Footer />
     </>
