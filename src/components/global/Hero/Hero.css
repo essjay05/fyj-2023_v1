@@ -1,31 +1,49 @@
 @import '../../../index.css';
 
 .hero-img-container {
-  width: 100%;
+  position: relative;
+  width: 100vw;
   height: 100vh;
-  background-image: url('../../../../public/joy-stage-managing.jpeg');
+  background-image: url('../../../../public/JoyOfAllTradesTech.png');
   background-size: cover;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+  margin: 0 0 2rem;
+  padding: 5rem 0 0;
 }
 
 .hero-img-container:after {
   content: '';
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 111vh;
   background: var(--black-color);
-  opacity: .85;
+  opacity: .75;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-.hero-img-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+.hero-img-text {
+  position: relative;
+  z-index: 2;
+  top: 6%;
+  margin-left: 6%;
+  text-shadow: 3px 3px 5px rgba(52, 78, 92, .85);
+  opacity: .9;
+  width: 50vw;
+}
+
+.hero-img-text > *, .hero-img-text ul, .hero-img-text li {
+  width: auto;
 }
 
 .hero-img-text h1 {
-  font-size: 10rem;
+  font-size: 15rem;
   color: var(--teal-color);
+  font-family: 'Covered By Your Grace', 'Helvetica', monospace;
+  line-height: 9rem;
 }
 
 .hero-img-text h2 {
@@ -35,4 +53,9 @@
 .hero-img-text p, .hero-img-text ul {
   list-style: none;
   font-size: 1.5rem;
+}
+
+.hero-img-text li span {
+  position: relative;
+  left: 2.65rem;
 }
