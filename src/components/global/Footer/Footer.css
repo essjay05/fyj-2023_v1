@@ -1,15 +1,7 @@
 @import '../../../index.css';
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.75rem;
-  height: 2.25rem;
-  background: rgba(29, 30, 34, .95);
-}
-
-.copyright {
-  color: var(--white-color);
+  width: auto;
+  max-width: 100vw;
+  padding: .5rem 6%;
 }
