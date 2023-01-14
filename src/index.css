@@ -31,6 +31,7 @@
 
 * {
   margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
   font-family: 'Roboto Mono', monospace;
   color: var(--light-grey-color);
@@ -41,9 +42,15 @@ html {
   background-color: var(--black-color);
 }
 
+ol, ul, p {
+  padding: 0;
+  margin: 0;
+}
+
 .handwritten-style {
-  font-family: 'Architects Daughter', Helvetica, sans-serif;
+  font-family: 'Covered By Your Grace', Helvetica, sans-serif;
   text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .all-caps {
@@ -62,10 +69,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
 h1, .title-style-1 {
@@ -131,7 +135,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: var(--white-color);
@@ -142,7 +146,7 @@ button:focus-visible {
   button {
     background-color: var(--white-color);
   }
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
