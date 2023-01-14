@@ -6,6 +6,8 @@ import { Portfolio } from './pages/Portfolio'
 import { About } from './pages/About'
 import { StyleGuide } from './pages/StyleGuide'
 
+import './App.css'
+
 
 function App() {
 
