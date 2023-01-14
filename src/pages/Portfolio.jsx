@@ -10,7 +10,7 @@ export function Portfolio({ pageName }) {
   }, [])
 
   return (
-    <>
+    <div className='App'>
       <Header currentPageName={pageName} />
       <main>
         <section>
@@ -18,6 +18,6 @@ export function Portfolio({ pageName }) {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

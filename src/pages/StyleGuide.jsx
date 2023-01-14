@@ -10,7 +10,7 @@ export function StyleGuide({ pageName }) {
   }, [])
 
   return (
-    <>
+    <div className='App'>
       <Header currentPageName={pageName} />
       <main>
         <section className='text-styles'>
@@ -73,6 +73,6 @@ export function StyleGuide({ pageName }) {
         </section>
         <Footer/>
       </main>
-    </>
+    </div>
   )
 }

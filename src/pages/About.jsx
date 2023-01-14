@@ -10,7 +10,7 @@ export function About({ pageName }) {
   }, [])
 
   return (
-    <>
+    <div className='App'>
       <Header currentPageName={pageName}/>
       <main>
         <section id='about'>
@@ -26,6 +26,6 @@ export function About({ pageName }) {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
