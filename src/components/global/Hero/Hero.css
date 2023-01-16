@@ -4,7 +4,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('../../../../public/JoyOfAllTradesTech.png');
+  background-image: url('../../../assets/JoyOfAllTradesTech.png');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@
   width: 100vw;
   height: 111vh;
   background: var(--black-color);
-  opacity: .75;
+  opacity: 0.75;
   position: absolute;
   top: 0;
   left: 0;
@@ -30,12 +30,14 @@
   z-index: 2;
   top: 6%;
   margin-left: 6%;
-  text-shadow: 3px 3px 5px rgba(52, 78, 92, .85);
-  opacity: .9;
+  text-shadow: 3px 3px 5px rgba(52, 78, 92, 0.85);
+  opacity: 0.9;
   width: 50vw;
 }
 
-.hero-img-text > *, .hero-img-text ul, .hero-img-text li {
+.hero-img-text > *,
+.hero-img-text ul,
+.hero-img-text li {
   width: auto;
 }
 
@@ -50,7 +52,8 @@
   color: var(--teal-color);
 }
 
-.hero-img-text p, .hero-img-text ul {
+.hero-img-text p,
+.hero-img-text ul {
   list-style: none;
   font-size: 1.5rem;
 }
