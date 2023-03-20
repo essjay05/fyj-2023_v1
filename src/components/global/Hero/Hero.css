@@ -4,7 +4,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('../../../assets/JoyOfAllTradesTech.png');
+  background-image: url('../../../../public/joy-oat-hero-img.JPG');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 .hero-img-container:after {
   content: '';
   width: 100vw;
-  height: 111vh;
+  height: 113vh;
   background: var(--black-color);
   opacity: 0.75;
   position: absolute;
