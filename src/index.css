@@ -1,7 +1,7 @@
 :root {
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
-  line-height: 1.6rem;
+  --default-line-height: 1.4;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -16,17 +16,17 @@
 
   /* Colors */
   --black-color: #1d1e22;
-  --dark-teal: #344E5C;
+  --dark-teal: #344e5c;
   --dark-grey-color: #636e72;
   --light-grey-color: #dfe6e9;
   --white-color: #ffffff;
-  --red-color: #EF3D59;
-  --orange-color: #E17A47;
-  --yellow-color: #EFC958;
+  --red-color: #ef3d59;
+  --orange-color: #e17a47;
+  --yellow-color: #efc958;
   --green-color: #00b894;
   --blue-color: #0984e3;
-  --teal-color: #4AB19D;
-  --teal-highlight: rgba(1, 255, 230, .85);
+  --teal-color: #4ab19d;
+  --teal-highlight: rgba(1, 255, 230, 0.85);
 }
 
 * {
@@ -42,9 +42,12 @@ html {
   background-color: var(--black-color);
 }
 
-ol, ul, p {
+ol,
+ul,
+p {
   padding: 0;
   margin: 0;
+  line-height: var(--default-line-height);
 }
 
 .handwritten-style {
@@ -72,44 +75,51 @@ body {
   padding: 0;
 }
 
-h1, .title-style-1 {
+h1,
+.title-style-1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-h2, .title-style-2 {
+h2,
+.title-style-2 {
   font-size: 2.9em;
   line-height: 1.1;
   font-weight: 600;
   color: var(--yellow-color);
 }
 
-h3, .title-style-3 {
+h3,
+.title-style-3 {
   font-size: 2.75em;
   line-height: 1.1;
   color: var(--blue-color);
 }
 
-h4, .title-style-4 {
+h4,
+.title-style-4 {
   font-size: 2.25em;
   line-height: 1.1;
   font-weight: 600;
 }
 
-h5, .title-style-5 {
+h5,
+.title-style-5 {
   font-size: 2em;
   line-height: 1;
   color: var(--yellow-color);
 }
 
-h6, .title-style-6 {
+h6,
+.title-style-6 {
   font-size: 1.75em;
   line-height: 1;
   font-weight: 600;
   color: var(--blue-color);
 }
 
-p, .content-style {
+p,
+.content-style {
   font-size: 1.15em;
   font-family: 'Roboto Mono', monospace;
   line-height: 1.6;
@@ -160,9 +170,9 @@ button:focus-visible {
   button {
     background-color: var(--teal-color);
     border: 2px solid transparent;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     color: var(--black-color);
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
   button:hover {
     background-color: transparent;
