@@ -13,17 +13,42 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+import { NavLink } from 'react-router-dom';
+
+// const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+const pages = [
+  {
+    to: '/',
+    name: 'Home',
+    active: false
+  },
+  {
+    to: '/portfolio',
+    name: 'Portfolio',
+    active: false
+  },
+  {
+    to: '/about',
+    name: 'About',
+    active: false
+  },
+  {
+    to: '/style-guide',
+    name: 'Style Guide',
+    active: false
+  }
+]
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+function ResponsiveAppBar({ currentPageName }) {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -87,9 +112,15 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <NavLink 
+                    to={page.to}
+                    className={`handwritten-style nav-link ${page.name === currentPageName ? 'active': ''}`}
+                    aria-label={page.name}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </NavLink>
+                  
                 </MenuItem>
               ))}
             </Menu>
@@ -114,13 +145,13 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
