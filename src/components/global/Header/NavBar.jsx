@@ -39,7 +39,15 @@ const customTheme = createTheme({
     background: {
       default: 'rgba(0,0,0,0.0)',
     },
-  }
+  },
+  typography: {
+    fontFamily: [
+      'Covered By Your Grace',
+      'Roboto',
+      'Helvetica',
+      'sans-serif',
+    ].join(','),
+  },
 });
 
 const pages = [
