@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--monospace-font-2);
   font-size: 16px;
   --default-line-height: 1.4;
   font-weight: 400;
@@ -27,15 +27,25 @@
   --blue-color: #0984e3;
   --teal-color: #4ab19d;
   --teal-highlight: rgba(1, 255, 230, 0.85);
+
+  /* Fonts */
+  --handwritten-font-1: 'Covered By Your Grace', Helvetica, sans-serif;
+  --handwritten-font-2: 'Architects Daughter', Helvetica, sans-serif;
+  --handwritten-font-3: 'Kalam', Helvetica, sans-serif;
+  --handwritten-font-4: 'Nothing You Could Do', Helvetica, sans-serif;
+  --handwritten-font-5: 'Permanent Marker', Helvetica, sans-serif;
+  --handwritten-font-6: 'Reenie Beanie', Helvetica, sans-serif;
+  --monospace-font-1: 'Roboto Mono', monospace;
+  --monospace-font-2: 'JetBrains Mono', monospace;
 }
 
 * {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--monospace-font-2);
   color: var(--light-grey-color);
-  width: 100vw;
+  width: 100%;
 }
 
 html {
@@ -51,9 +61,9 @@ p {
 }
 
 .handwritten-style {
-  font-family: 'Covered By Your Grace', Helvetica, sans-serif;
+  font-family: var(--handwritten-font-4);
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
 .all-caps {
@@ -121,7 +131,7 @@ h6,
 p,
 .content-style {
   font-size: 1.15em;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--monospace-font-2);
   line-height: 1.6;
   font-weight: 400;
 }
