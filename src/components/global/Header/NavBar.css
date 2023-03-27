@@ -1,16 +1,16 @@
 @import '../../../index.css';
 
-.menu, .menu-links {
-  width: auto;
-}
-
 .nav-link {
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   color: var(--teal-color);
   font-size: 1.5rem;
   text-align: center;
   width: auto;
-  margin: .5rem 1.5rem;
+  margin: 0.5rem 1.5rem;
+}
+
+.nav-link.active {
+  text-decoration: underline;
 }
 
 .nav-link:hover {
@@ -18,49 +18,10 @@
   text-decoration: underline;
 }
 
-/* Mobile Nav */
-.burger {
-  margin: 0 6rem 0 0;
-  font-size: 2rem;
-  line-height: 4rem;
-  color: var(--teal-color);
-  display: none;
-}
-
-.nav-toggle {
-  display: none;
+/* Mobile Nav Drawer */
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+  background: rgba(0, 0, 0, 0.65) !important;
 }
 
 @media only screen and (max-width: 800px) {
-  .burger {
-    display: block;
-    margin: 0 2rem;
-    font-size: 2.5rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-
-  .burger:hover, .menu a:hover {
-    cursor: pointer;
-    color: var(--teal-color);
-    transition: color 0.5s ease-in-out;
-    border-top: none;
-  }
-
-  #toggle:checked ~ .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .menu {
-    text-align: center;
-    width: 100%;
-    margin: 0 0 28rem 0;
-    padding: 0;
-    position: absolute;
-    background: rgba(0,0,0, .8);
-    display: none; 
-  }
 }

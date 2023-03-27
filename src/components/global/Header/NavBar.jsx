@@ -12,16 +12,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 
-// import HiddenToggle from './HiddenToggle'
-
 import './NavBar.css'
 
 const customTheme = createTheme({
   palette: {
     primary: {
-      light: "#112233",
+      light: "rgba(1, 255, 230, 0.85)",
       main: 'rgba(0,0,0,0.0)',
-      dark: "#778899",
+      dark: "#4ab19d",
       contrastText: "#ffffff"
     },
     secondary: {
@@ -42,7 +40,7 @@ const customTheme = createTheme({
   },
   typography: {
     fontFamily: [
-      'Covered By Your Grace',
+      'Nothing You Could Do',
       'Roboto',
       'Helvetica',
       'sans-serif',
@@ -100,7 +98,29 @@ const NavBar = ({ currentPageName }) => {
         position='static'>
         <Container maxWidth='xl'>
           <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            {/* Desktop Nav 'LOGO' */}
+            <Typography
+              variant='h6'
+              noWrap
+              component='a'
+              href='/'
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'Nothing You Could Do',
+                letterSpacing: '2px',
+                color: '#4ab19d',
+                textDecoration: 'none',
+                width: '100%',
+              }}
+            >
+              &copy; JOY S. 2018
+            </Typography>
+            {/* Mobile Menu Nav / pop up menu */}
+            <Box sx={{ 
+              flexGrow: 1, 
+              display: { xs: 'flex', md: 'none' },
+            }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -115,20 +135,27 @@ const NavBar = ({ currentPageName }) => {
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
-                  vertical: 'bottom',
+                  vertical: 'top',
                   horizontal: 'left',
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: 'top',
+                  vertical: 'bottom',
                   horizontal: 'left',
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: 'block', md: 'none' },
+                  mr: 2,
+                  fontFamily: 'Nothing You Could Do',
+                  letterSpacing: '2px',
+                  color: '#1d1e22',
+                  textDecoration: 'none',
+                  width: '100%',
+                  background: 'rgba(0,0,0,.8)',
                 }}>
-                {pages.map((page, index) => {
+                {pages.map((page, index) =>(
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                     <NavLink 
                       to={page.to}
@@ -137,7 +164,7 @@ const NavBar = ({ currentPageName }) => {
                       <Typography textAlign="center">{page.name}</Typography>
                     </NavLink>
                   </MenuItem>
-                })}
+                ))}
               </Menu>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -151,42 +178,8 @@ const NavBar = ({ currentPageName }) => {
                 </NavLink>
               ))}
             </Box>
-            
-          
           </Toolbar>
-
         </Container>
-        {/* <div className='mobile-nav-toggle'>
-          <input id='NavToggle' className='nav-toggle' type='checkbox' htmlFor='toggle' />
-          <label className='burger' htmlFor='NavToggle' aria-label='Mobile Nav Toggle'> &#9776;</label>
-          <HiddenToggle/>
-        </div> */}
-        {/* <div className='menu-links'>
-          <NavLink 
-            to='/'
-            className='handwritten-style nav-link'
-            aria-label='Home'>
-              Home
-          </NavLink>
-          <NavLink 
-            to='/portfolio'
-            className='handwritten-style nav-link'
-            aria-label='Portfolio'>
-              Portfolio
-          </NavLink>
-          <NavLink 
-            to='/about'
-            className='handwritten-style nav-link'
-            aria-label='About'>
-              About
-          </NavLink>
-          <NavLink 
-            to='/style-guide'
-            className='handwritten-style nav-link'
-            aria-label='Style Guide'>
-              Style Guide
-          </NavLink>
-        </div> */}
       </AppBar>
     </ThemeProvider>
   )
