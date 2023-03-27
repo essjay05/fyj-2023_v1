@@ -11,8 +11,7 @@
   -moz-box-sizing: border-box;
   bottom: 0;
   max-width: inherit;
-  padding: .5rem 2rem;
-  background: rgba(0, 0, 0, .85);
+  background: rgba(0, 0, 0, 0.85);
   z-index: 100;
 }
 

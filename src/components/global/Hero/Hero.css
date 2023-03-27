@@ -44,7 +44,7 @@
 .hero-img-text h1 {
   font-size: 15rem;
   color: var(--teal-color);
-  font-family: var(--handwritten-font-4);
+  /* font-family: var(--handwritten-font-4); */
   line-height: 9rem;
   margin-bottom: 1.5rem;
 }

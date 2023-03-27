@@ -1,11 +1,10 @@
 @import '../../../index.css';
 
 .nav-link {
-  transition: 0.3s ease-in-out;
-  color: var(--teal-color);
-  font-size: 1.5rem;
+  transition: var(--default-transition);
   text-align: center;
   width: auto;
+  color: var(--teal-highlight);
   margin: 0.5rem 1.5rem;
 }
 
@@ -13,7 +12,8 @@
   text-decoration: underline;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
   color: var(--blue-color);
   text-decoration: underline;
 }

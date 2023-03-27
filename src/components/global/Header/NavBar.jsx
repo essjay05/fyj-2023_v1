@@ -18,7 +18,7 @@ const customTheme = createTheme({
   palette: {
     primary: {
       light: "rgba(1, 255, 230, 0.85)",
-      main: 'rgba(0,0,0,0.0)',
+      main: 'rgba(0,0,0,0)',
       dark: "#4ab19d",
       contrastText: "#ffffff"
     },
@@ -34,17 +34,15 @@ const customTheme = createTheme({
       dark: '#00838f',
       contrastText: "#000"
     },
-    background: {
-      default: 'rgba(0,0,0,0.0)',
-    },
   },
   typography: {
     fontFamily: [
       'Nothing You Could Do',
-      'Roboto',
+      'JetBrains Mono',
       'Helvetica',
       'sans-serif',
     ].join(','),
+    color: 'rgba(1, 255, 230, 0.85)',
   },
 });
 
@@ -74,21 +72,13 @@ const pages = [
 
 const NavBar = ({ currentPageName }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -109,7 +99,7 @@ const NavBar = ({ currentPageName }) => {
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'Nothing You Could Do',
                 letterSpacing: '2px',
-                color: '#4ab19d',
+                color: '#FFFFFF',
                 textDecoration: 'none',
                 width: '100%',
               }}
@@ -147,35 +137,47 @@ const NavBar = ({ currentPageName }) => {
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: 'block', md: 'none' },
-                  mr: 2,
-                  fontFamily: 'Nothing You Could Do',
-                  letterSpacing: '2px',
-                  color: '#1d1e22',
-                  textDecoration: 'none',
                   width: '100%',
                   background: 'rgba(0,0,0,.8)',
                 }}>
                 {pages.map((page, index) =>(
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <NavLink 
-                      to={page.to}
+                    <Typography
+                      variant='h6'
+                      component='a'
+                      href={page.to}
+                      textAlign="center"
+                      aria-label={page.name}
                       className={`handwritten-style nav-link ${page.name === currentPageName ? 'active': ''}`}
-                      aria-label={page.name}>
-                      <Typography textAlign="center">{page.name}</Typography>
-                    </NavLink>
+                      sx={{ 
+                        fontFamily: 'Nothing You Could Do',
+                        letterSpacing: '2px',
+                        color: 'rgba(1, 255, 230, 0.85)',
+                        textDecoration: 'none',
+                        width: '100%',}}>
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page, index) => (
-                <NavLink 
-                  key={page.name}
-                  to={page.to}
+                <Typography
+                  variant='h6'
+                  component='a'
+                  href={page.to}
+                  textAlign="center"
+                  aria-label={page.name}
                   className={`handwritten-style nav-link ${page.name === currentPageName ? 'active': ''}`}
-                  aria-label={page.name}>
-                  <Typography textAlign="center">{page.name}</Typography>
-                </NavLink>
+                  sx={{
+                    fontFamily: 'Nothing You Could Do',
+                    letterSpacing: '2px',
+                    color: 'rgba(1, 255, 230, 0.85)',
+                    textDecoration: 'none',
+                    width: '100%',}}>
+                  {page.name}
+                </Typography>
               ))}
             </Box>
           </Toolbar>
