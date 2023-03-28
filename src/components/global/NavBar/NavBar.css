@@ -1,0 +1,27 @@
+@import '../../../index.css';
+
+.nav-link {
+  transition: var(--default-transition);
+  text-align: center;
+  width: auto;
+  color: var(--teal-highlight);
+  margin: 0.5rem 1.5rem;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--blue-color);
+  text-decoration: underline;
+}
+
+/* Mobile Nav Drawer */
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+
+@media only screen and (max-width: 800px) {
+}

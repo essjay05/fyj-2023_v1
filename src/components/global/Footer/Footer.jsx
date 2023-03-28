@@ -1,11 +1,12 @@
-import NavBar from '../Header/NavBar'
+import NavBar from '../NavBar/NavBar'
 
 import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer className='d-flex justify-content-between align-items-center'>
-      <p className='copyright handwritten-style pt-3 px-4'>Last Updated: 03-20-2023</p>
+    <footer className='nav-bar-container'>
+      {/* <p className='copyright handwritten-style pt-3 px-4'>Last Updated: 03-20-2023</p> */}
+      <NavBar />
     </footer>
   )
 }
