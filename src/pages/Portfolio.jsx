@@ -10,22 +10,26 @@ export function Portfolio({ pageName }) {
   const [ loading, setLoading ] = useState(true)
 
   const projectsUrl = `http://localhost:1337/api/projects`
+  const CancelToken = axios.CancelToken
+  const source = CancelToken.source()
 
   const getProjects = () => {
     return new Promise(resolve => {
-      axios(projectsUrl)
+      axios.get(projectsUrl, { cancelToken: source.token })
         .then(response => {
-          const projectsResults = response.data.results
-          console.log(projectsResults)
+          const projectsResults = response.data.data
           setProjects(projectsResults)
         })
         .catch(err => {
-          console.error(err)
+          if (axios.isCancel(err)) {
+            console.log('successfully aborted');
+          } else {
+            console.error(err)
+          }
         })
         .finally(() => setLoading(false))
     })
   }
-
 
   useEffect(() => {
     document.title = pageName
@@ -36,9 +40,21 @@ export function Portfolio({ pageName }) {
     <div className='App'>
       <Header currentPageName={pageName} />
       <main>
-        <section>
-          <h2 className='handwritten-style'>Project Cards go here...</h2>
-        </section>
+        { (loading || projects.length === 0) ? 
+          <h1>Loading...</h1>
+        :
+          <>
+            <h1 className='handwritten-style'>My Portfolio</h1>
+            <section className='projects-list container'>
+              { projects.map(project => {
+                const { Description, GithubUrl, LiveUrl, Name, TechUsed } = {...project.attributes}
+                return (
+                  <h2 key={project.id}>{Name}</h2>
+                )
+              })}
+            </section>
+          </>
+        }
       </main>
       <Footer />
     </div>
