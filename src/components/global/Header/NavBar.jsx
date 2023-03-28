@@ -101,7 +101,7 @@ const NavBar = ({ currentPageName }) => {
                 letterSpacing: '2px',
                 color: '#FFFFFF',
                 textDecoration: 'none',
-                width: '100%',
+                width: { s: '25%', md: '50%', l: '100%'},
               }}
             >
               &copy; JOY S. 2018
