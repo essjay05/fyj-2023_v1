@@ -2,7 +2,8 @@ import './Header.css'
 
 const Header = ({ currentPageName }) => {
   return (
-    <header className='nav-bar-container'>
+    <header>
+      <h1>{ currentPageName }</h1>
     </header>
   )
 }
