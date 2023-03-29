@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+import { Grid } from '@mui/material'
+
 import Header from '../components/global/Header/Header'
 import Footer from '../components/global/Footer/Footer'
+import ProjectCard from '../components/global/Card/ProjectCard'
 
 export function Portfolio({ pageName }) {
 
@@ -45,14 +48,28 @@ export function Portfolio({ pageName }) {
         :
           <>
             <h1 className='handwritten-style'>My Portfolio</h1>
-            <section className='projects-list container'>
+            <Grid container 
+              spacing={2}
+              className='projects-list container'>
               { projects.map(project => {
                 const { Description, GithubUrl, LiveUrl, Name, TechUsed } = {...project.attributes}
                 return (
-                  <h2 key={project.id}>{Name}</h2>
+                  <Grid item 
+                    xs={12} md={4}
+                    key={project.id}>
+                    <ProjectCard
+                      // imgSrc={}
+                      cardTitle={Name}
+                      cardDescription={Description}
+                      techUsed={TechUsed}
+                      btn1Text={`Demo Link`}
+                      btn1Url={LiveUrl}
+                      btn2Text={`Code`}
+                      btn2Url={GithubUrl}/>
+                  </Grid>
                 )
               })}
-            </section>
+            </Grid>
           </>
         }
       </main>

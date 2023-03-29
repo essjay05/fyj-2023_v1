@@ -1,0 +1,5 @@
+@import '../../../index.css';
+
+.project-card {
+  background: var(--black-color);
+}
