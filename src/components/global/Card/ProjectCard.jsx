@@ -22,6 +22,7 @@ export default function ProjectCard(
       
   return (
     <Card className='project-card'
+      
       sx={{ maxWidth: 345 }}>
       { imgSrc ?
         <CardMedia
@@ -44,8 +45,22 @@ export default function ProjectCard(
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" aria-label={ btn1Text }>{ btn1Url }</Button>
-        <Button size="small" aria-label={ btn2Text }>{ btn2Url }</Button>
+        <Button 
+          size="small" 
+          variant='contained'
+          href={ btn1Url }
+          target='_blank'
+          aria-label={ `${cardTitle} ${btn1Text}` }>
+          { btn1Text }
+        </Button>
+        <Button 
+          size="small" 
+          variant='contained'
+          href={btn2Url}
+          target='_blank'
+          aria-label={ `${cardTitle} ${btn2Text}` }>
+          { btn2Text }
+        </Button>
       </CardActions>
     </Card>
   )
